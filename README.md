@@ -1,8 +1,8 @@
-## send_message.rb  
+## send_messages.rb  
 
 Read the file 100 lines per time, spawn up to 10 threads to send batches up to 10 messages each to SQS
 
-## publish_message.rb
+## publish_messages.rb
 
 Read the file 10 lines per time, spawn up to 10 threads to publish 1 message each
 

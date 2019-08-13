@@ -14,7 +14,7 @@ sqs = Aws::SQS::Client.new(
 
 queue_url='http://sqs:9324/queue/queue1'
 
-def generate_map(array_of_messages)
+def generate_array_of_entries(array_of_messages)
   r = []
   array_of_messages.each_with_index do |m, i|
     r << {
@@ -43,7 +43,7 @@ File.open(f) do |file|
     pool = []
     lines.each_slice(10).to_a.each do |up_to_ten_lines|
       pool << Thread.new {
-        msgs = generate_map(up_to_ten_lines)
+        msgs = generate_array_of_entries(up_to_ten_lines)
         send_message_batch(sqs, queue_url, msgs)
       }
     end
