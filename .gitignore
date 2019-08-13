@@ -1,0 +1,5 @@
+.bundle
+vendor
+Gemfile.lock
+lorem_ipsum.txt
+multi_thread.rb
